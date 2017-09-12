@@ -1,7 +1,18 @@
 <?php
 echo "<meta chartset='utf-8'>";
-require_once 'app/controllers/Home.class.php';
-require_once 'app/controllers/Test.class.php';
+
+require_once 'core/App.class.php';
+
+spl_autoload_register(array('App','myAutoloader'));
+
+try {
+  App::run();
+  throw new Exception();
+} catch(Exception $e) {
+  echo $e->getMessage();
+}
+
+/*
 
 //接受两个参数 controller控制器名称 method控制器中的方法名称
 $controller = isset($_GET['controller']) ? $_GET['controller'] : 'home';
@@ -13,3 +24,4 @@ $c = new $controller;
 
 //调用控制器中的方法
 $c->$method();
+*/
