@@ -2,12 +2,22 @@
 echo "<meta chartset='utf-8'>";
 
 require_once 'core/App.class.php';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
 spl_autoload_register(array('App','myAutoloader'));
 
 try {
   App::run();
+<<<<<<< HEAD
 } catch(MyException $e) {
   $e->showError(($e->getMessage()));
+=======
+  throw new Exception();
+} catch(Exception $e) {
+  echo $e->getMessage();
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
 }
 
 /*

@@ -43,12 +43,17 @@ class App
     if(file_exists($url)) {
       $c = new self::$controller;
     } else {
+<<<<<<< HEAD
       throw new MyException('控制器不存在');
+=======
+      throw new Exception('控制器不存在');
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
     }
 
     //执行方法
     if(method_exists($c,self::$method)) {
       $m = self::$method;
+<<<<<<< HEAD
       $new_pams = array();
       $num = count(self::$pams);
 
@@ -66,6 +71,11 @@ class App
       $c->$m($new_pams);
     } else {
       throw new MyException('方法不存在');
+=======
+      $c->$m();
+    } else {
+      throw new Exception('方法不存在');
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
     }
   }
 
@@ -89,7 +99,14 @@ class App
     } else if (file_exists($core)) {
       require_once ($core);
     } else {
+<<<<<<< HEAD
       throw new MyException('类文件不存在');
     }
   }
+=======
+      throw new Exception('类文件不存在');
+    }
+  }
+
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
 }

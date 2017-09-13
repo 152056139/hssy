@@ -29,3 +29,7 @@ $c->$method();
 ```
 ## 开启URL重写模块
   [用Apache的mod_rewrite重写URL](https://www.howtoing.com/how-to-rewrite-urls-with-mod-rewrite-for-apache-on-ubuntu-16-04/)
+<<<<<<< HEAD
+=======
+## 
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
