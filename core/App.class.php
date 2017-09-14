@@ -38,7 +38,12 @@ class App
     self::paseUrl();
 
     //判断控制器的路径
-    $url = 'app/controllers/'.self::$controller.'.class.php';
+    if (App == 'app') {
+      $url = 'app/controllers/'.self::$controller.'.class.php';
+    }
+    if (App == 'admin') {
+      $url = 'admin/controllers/'.self::$controller.'.class.php';
+    }
     //判断控制器文件是否存在
     if(file_exists($url)) {
       $c = new self::$controller;
@@ -76,12 +81,22 @@ class App
    * @throws Exception
    */
   public static function myAutoloader($className){
-    //控制器类文件目录
-    $controller = 'app/controllers/'.$className.'.class.php';
-    //模块类文件目录
-    $model = 'app/models/'.$className.'.class.php';
-    //核心类文件目录
-    $core = 'core/'.$className.'.class.php';
+    if (App == 'app'){
+      //控制器类文件目录
+      $controller = 'app/controllers/'.$className.'.class.php';
+      //模块类文件目录
+      $model = 'app/models/'.$className.'.class.php';
+      //核心类文件目录
+      $core = 'core/'.$className.'.class.php';
+    }
+    if (App == 'admin'){
+      $controller = 'admin/controllers/'.$className.'.class.php';
+      //模块类文件目录
+      $model = 'admin/models/'.$className.'.class.php';
+      //核心类文件目录
+      $core = 'core/'.$className.'.class.php';
+    }
+
 
     if (file_exists($controller)){
       require_once $controller;

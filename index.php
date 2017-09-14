@@ -3,6 +3,8 @@ echo "<meta chartset='utf-8'>";
 
 require_once 'core/App.class.php';
 
+//注册一个
+define('App', 'app');
 spl_autoload_register(array('App','myAutoloader'));
 
 try {
