@@ -9,9 +9,9 @@
   1. 写的是ssh的地址，而不是http的地址。因为配置公钥只可以让ssh免密登录。
   2. 如果已经配置过填写错的，需要执行`git remote rm origin`删除之前配置过的，然后重新添加源。
 
-  `git remote add origin git@github.com:1162032953@qq.com/hssy.git`
+  `git remote add origin git@github.com:152056139/hssy.git`
 - 上传到github
 
-  注意：github上有更新的版本，将会出错，需要执行`git pull origin master`,拉取远程服务器上的文件，再上传。
+  注意：github上有更新的版本，将会出错，需要执行`git pull origin master --allow-unrelated-histories`,拉取远程服务器上的文件，再上传。
 
   `git push -u origin master`

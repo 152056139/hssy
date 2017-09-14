@@ -2,6 +2,7 @@
 echo "<meta chartset='utf-8'>";
 
 require_once 'core/App.class.php';
+
 spl_autoload_register(array('App','myAutoloader'));
 
 try {
