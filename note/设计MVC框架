@@ -1,0 +1,35 @@
+# 设计MVC框架
+简单的登录界面已经写好了，然后在东西慢慢变多之前，尽量构建一个比较容易管理的框架。当然就是流行的MVC。
+## MVC的思想
+- M model模型，主要关于数据库的操作。
+- V view视图，主要编写见界面。
+- C controller控制器。
+
+## 使用PHP的魔术变量更稳定的引用文件
+# TODO
+
+## 单一入口文件
+```
+<?php
+echo "<meta chartset='utf-8'>";
+//引用home和test类
+require_once 'app/controllers/Home.class.php';
+require_once 'app/controllers/Test.class.php';
+
+//接受两个参数 controller控制器名称 method控制器中的方法名称
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'home';
+$method = isset($_GET['method']) ? $_GET['method'] : 'index';
+
+//加载指定控制器中的制定方法
+//实例化控制器类
+$c = new $controller;
+
+//调用控制器中的方法
+$c->$method();
+```
+## 开启URL重写模块
+  [用Apache的mod_rewrite重写URL](https://www.howtoing.com/how-to-rewrite-urls-with-mod-rewrite-for-apache-on-ubuntu-16-04/)
+<<<<<<< HEAD
+=======
+## 
+>>>>>>> 6af58940a7575e74ec23b20c6e4c4fa1ec8b1405
